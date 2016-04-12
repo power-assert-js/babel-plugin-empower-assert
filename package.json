@@ -1,0 +1,38 @@
+{
+  "name": "babel-plugin-empower-assert",
+  "description": "Babel plugin to convert assert to power-assert at compile time",
+  "version": "0.0.1",
+  "author": {
+    "name": "Takuto Wada",
+    "email": "takuto.wada@gmail.com",
+    "url": "https://github.com/twada"
+  },
+  "bugs": "https://github.com/twada/babel-plugin-empower-assert/issues",
+  "devDependencies": {
+    "babel-core": "^6.0.0",
+    "mocha": "^2.4.5",
+    "xtend": "^4.0.1"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "index.js",
+    "package.json"
+  ],
+  "homepage": "https://github.com/twada/babel-plugin-empower-assert",
+  "keywords": [
+    "assert",
+    "power-assert",
+    "babel",
+    "babel-plugin"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twada/babel-plugin-empower-assert.git"
+  },
+  "scripts": {
+    "test": "mocha --timeout 0"
+  }
+}
