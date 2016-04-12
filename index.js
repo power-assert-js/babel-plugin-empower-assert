@@ -13,6 +13,29 @@
 module.exports = function (babel) {
     return {
         visitor: {
+            AssignmentExpression: {
+                enter: function (nodePath, pluginPass) {
+                    if (!nodePath.equals('operator', '=')) {
+                        return;
+                    }
+                    var left = nodePath.get('left');
+                    if (!left.isIdentifier()) {
+                        return;
+                    }
+                    if (!left.equals('name', 'assert')) {
+                        return;
+                    }
+                    var right = nodePath.get('right');
+                    if (!right.isCallExpression()) {
+                        return;
+                    }
+                    var callee = right.get('callee');
+                    var arg = right.get('arguments')[0];
+                    if (isRequireAssert(callee, arg)) {
+                        arg.set('value', 'power-assert');
+                    }
+                }
+            },
             VariableDeclarator: {
                 enter: function (nodePath, pluginPass) {
                     var id = nodePath.get('id');
