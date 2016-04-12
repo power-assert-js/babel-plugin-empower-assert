@@ -1,6 +1,9 @@
 [![power-assert][power-assert-banner]][power-assert-url]
 
 [![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url]
+[![License][license-image]][license-url]
+
 
 `babel-plugin-empower-assert` is a [Babel](https://babeljs.io/) plugin to convert [assert](https://nodejs.org/api/assert.html) to [power-assert](https://github.com/power-assert-js/power-assert) at compile time.
 
@@ -120,3 +123,9 @@ Licensed under the [MIT](http://twada.mit-license.org/) license.
 
 [travis-url]: https://travis-ci.org/twada/babel-plugin-empower-assert
 [travis-image]: https://secure.travis-ci.org/twada/babel-plugin-empower-assert.svg?branch=master
+
+[npm-url]: https://npmjs.org/package/babel-plugin-empower-assert
+[npm-image]: https://badge.fury.io/js/babel-plugin-empower-assert.svg
+
+[license-url]: http://twada.mit-license.org/
+[license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg
