@@ -55,6 +55,23 @@ module.exports = function (babel) {
                         arg.set('value', 'power-assert');
                     }
                 }
+            },
+            ImportDeclaration: {
+                enter: function (nodePath, pluginPass) {
+                    var source = nodePath.get('source');
+                    if (!(source.equals('value', 'assert'))) {
+                        return;
+                    }
+                    var firstSpecifier = nodePath.get('specifiers')[0];
+                    if (!firstSpecifier.isImportDefaultSpecifier()) {
+                        return;
+                    }
+                    var local = firstSpecifier.get('local');
+                    if (!(local.equals('name', 'assert'))) {
+                        return;
+                    }
+                    source.set('value', 'power-assert');
+                }
             }
         }
     };
