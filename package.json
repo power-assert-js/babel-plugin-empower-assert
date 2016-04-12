@@ -1,7 +1,7 @@
 {
   "name": "babel-plugin-empower-assert",
   "description": "Babel plugin to convert assert to power-assert at compile time",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": {
     "name": "Takuto Wada",
     "email": "takuto.wada@gmail.com",
