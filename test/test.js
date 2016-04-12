@@ -27,4 +27,5 @@ function testTransform (fixtureName, extraOptions, extraSuffix) {
 describe('babel-plugin-empower-assert', function () {
     testTransform('commonjs');
     testTransform('commonjs_singlevar');
+    testTransform('commonjs_powerassert');
 });
