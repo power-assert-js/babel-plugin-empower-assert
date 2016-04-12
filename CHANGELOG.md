@@ -1,3 +1,11 @@
+## [1.2.0](https://github.com/twada/babel-plugin-empower-assert/releases/tag/v1.2.0) (2016-04-12)
+
+
+#### Features
+
+* support ImportDeclaration ([a8c5326f](https://github.com/twada/babel-plugin-empower-assert/commit/a8c5326f098d49d25517995346b8818b72348046))
+
+
 ## [1.1.0](https://github.com/twada/babel-plugin-empower-assert/releases/tag/v1.1.0) (2016-04-12)
 
 
