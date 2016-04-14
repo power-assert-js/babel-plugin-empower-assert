@@ -115,17 +115,17 @@ AUTHOR
 
 LICENSE
 ---------------------------------------
-Licensed under the [MIT](http://twada.mit-license.org/) license.
+Licensed under the [MIT](https://github.com/power-assert-js/babel-plugin-empower-assert/blob/master/LICENSE) license.
 
 
 [power-assert-url]: https://github.com/power-assert-js/power-assert
 [power-assert-banner]: https://raw.githubusercontent.com/power-assert-js/power-assert-js-logo/master/banner/banner-official-fullcolor.png
 
-[travis-url]: https://travis-ci.org/twada/babel-plugin-empower-assert
-[travis-image]: https://secure.travis-ci.org/twada/babel-plugin-empower-assert.svg?branch=master
+[travis-url]: https://travis-ci.org/power-assert-js/babel-plugin-empower-assert
+[travis-image]: https://secure.travis-ci.org/power-assert-js/babel-plugin-empower-assert.svg?branch=master
 
 [npm-url]: https://npmjs.org/package/babel-plugin-empower-assert
 [npm-image]: https://badge.fury.io/js/babel-plugin-empower-assert.svg
 
-[license-url]: http://twada.mit-license.org/
+[license-url]: https://github.com/power-assert-js/babel-plugin-empower-assert/blob/master/LICENSE
 [license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg

@@ -7,7 +7,7 @@
     "email": "takuto.wada@gmail.com",
     "url": "https://github.com/twada"
   },
-  "bugs": "https://github.com/twada/babel-plugin-empower-assert/issues",
+  "bugs": "https://github.com/power-assert-js/babel-plugin-empower-assert/issues",
   "devDependencies": {
     "babel-core": "^6.0.0",
     "mocha": "^2.4.5",
@@ -16,10 +16,11 @@
   "files": [
     "README.md",
     "CHANGELOG.md",
+    "LICENSE",
     "index.js",
     "package.json"
   ],
-  "homepage": "https://github.com/twada/babel-plugin-empower-assert",
+  "homepage": "https://github.com/power-assert-js/babel-plugin-empower-assert",
   "keywords": [
     "assert",
     "power-assert",
@@ -30,7 +31,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/twada/babel-plugin-empower-assert.git"
+    "url": "https://github.com/power-assert-js/babel-plugin-empower-assert.git"
   },
   "scripts": {
     "test": "mocha --timeout 0"
