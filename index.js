@@ -2,7 +2,7 @@
  * babel-plugin-empower-assert
  *   Babel plugin to convert assert to power-assert at compile time
  * 
- * https://github.com/twada/babel-plugin-empower-assert
+ * https://github.com/power-assert-js/babel-plugin-empower-assert
  *
  * Copyright (c) 2016 Takuto Wada
  * Licensed under the MIT license.
