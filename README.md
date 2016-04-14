@@ -115,7 +115,7 @@ AUTHOR
 
 LICENSE
 ---------------------------------------
-Licensed under the [MIT](http://twada.mit-license.org/) license.
+Licensed under the [MIT](https://github.com/power-assert-js/babel-plugin-empower-assert/blob/master/LICENSE) license.
 
 
 [power-assert-url]: https://github.com/power-assert-js/power-assert
@@ -127,5 +127,5 @@ Licensed under the [MIT](http://twada.mit-license.org/) license.
 [npm-url]: https://npmjs.org/package/babel-plugin-empower-assert
 [npm-image]: https://badge.fury.io/js/babel-plugin-empower-assert.svg
 
-[license-url]: http://twada.mit-license.org/
+[license-url]: https://github.com/power-assert-js/babel-plugin-empower-assert/blob/master/LICENSE
 [license-image]: https://img.shields.io/badge/license-MIT-brightgreen.svg
