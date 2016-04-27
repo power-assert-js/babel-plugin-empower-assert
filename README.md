@@ -20,6 +20,28 @@ HOW TO USE
 ---------------------------------------
 
 
+### via [.babelrc](http://babeljs.io/docs/usage/babelrc/) (Recommended)
+
+```javascript
+{
+  "presets": [
+    ...
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "babel-plugin-empower-assert"
+      ],
+    }
+  }
+}
+```
+
+```
+$ babel /path/to/src/target.js > /path/to/build/target.js
+```
+
+
 ### via [Babel CLI](http://babeljs.io/docs/usage/cli/)
 
 ```
@@ -43,28 +65,6 @@ var transformed = babel.transform(jsCode, {
     plugins: ['babel-plugin-empower-assert']
 });
 console.log(transformed.code);
-```
-
-
-### via [.babelrc](http://babeljs.io/docs/usage/babelrc/)
-
-```javascript
-{
-  "presets": [
-    ...
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        "babel-plugin-empower-assert"
-      ],
-    }
-  }
-}
-```
-
-```
-$ babel /path/to/src/target.js > /path/to/build/target.js
 ```
 
 
