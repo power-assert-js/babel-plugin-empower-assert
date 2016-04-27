@@ -32,4 +32,5 @@ describe('babel-plugin-empower-assert', function () {
     testTransform('assignment_singlevar');
     testTransform('es6module');
     testTransform('es6module_powerassert');
+    testTransform('es6module_namespece');
 });
