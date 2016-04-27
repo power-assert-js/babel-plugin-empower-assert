@@ -1,3 +1,11 @@
+## [1.3.0](https://github.com/power-assert-js/babel-plugin-empower-assert/releases/tag/v1.3.0) (2016-04-27)
+
+
+#### Features
+
+* [support ImportNamespaceSpecifier](https://github.com/power-assert-js/babel-plugin-empower-assert/pull/4)
+
+
 ## [1.2.0](https://github.com/power-assert-js/babel-plugin-empower-assert/releases/tag/v1.2.0) (2016-04-12)
 
 
