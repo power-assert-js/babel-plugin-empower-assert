@@ -12,7 +12,7 @@ INSTALL
 ---------------------------------------
 
 ```
-$ npm install --save-dev babel-plugin-empower-assert
+$ npm install --save-dev babel-plugin-empower-assert power-assert
 ```
 
 
