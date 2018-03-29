@@ -1,5 +1,3 @@
-'use strict';
-
 import * as assert from 'power-assert';
 
 function add(a, b) {
