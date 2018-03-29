@@ -28,6 +28,7 @@ describe('babel-plugin-empower-assert', function () {
     testTransform('commonjs');
     testTransform('commonjs_singlevar');
     testTransform('commonjs_powerassert');
+    testTransform('commonjs_strictmode');
     testTransform('assignment');
     testTransform('assignment_singlevar');
     testTransform('es6module');
