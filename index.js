@@ -26,10 +26,11 @@ module.exports = function (babel) {
                         return;
                     }
                     var right = nodePath.get('right');
-                    if (!right.isCallExpression()) {
-                        return;
+                    if (right.isCallExpression()) {
+                        replaceAssertIfMatch(right);
+                    } else if (right.isMemberExpression()) {
+                        replaceAssertIfMatch(right.get('object'));
                     }
-                    replaceAssertIfMatch(right);
                 }
             },
             VariableDeclarator: {
@@ -42,10 +43,11 @@ module.exports = function (babel) {
                         return;
                     }
                     var init = nodePath.get('init');
-                    if (!init.isCallExpression()) {
-                        return;
+                    if (init.isCallExpression()) {
+                        replaceAssertIfMatch(init);
+                    } else if (init.isMemberExpression()) {
+                        replaceAssertIfMatch(init.get('object'));
                     }
-                    replaceAssertIfMatch(init);
                 }
             },
             ImportDeclaration: {
