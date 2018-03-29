@@ -25,12 +25,7 @@ module.exports = function (babel) {
                     if (!left.equals('name', 'assert')) {
                         return;
                     }
-                    var right = nodePath.get('right');
-                    if (right.isCallExpression()) {
-                        replaceAssertIfMatch(right);
-                    } else if (right.isMemberExpression()) {
-                        replaceAssertIfMatch(right.get('object'));
-                    }
+                    replaceAssertIfMatch(nodePath.get('right'));
                 }
             },
             VariableDeclarator: {
@@ -42,12 +37,7 @@ module.exports = function (babel) {
                     if (!id.equals('name', 'assert')) {
                         return;
                     }
-                    var init = nodePath.get('init');
-                    if (init.isCallExpression()) {
-                        replaceAssertIfMatch(init);
-                    } else if (init.isMemberExpression()) {
-                        replaceAssertIfMatch(init.get('object'));
-                    }
+                    replaceAssertIfMatch(nodePath.get('init'));
                 }
             },
             ImportDeclaration: {
@@ -72,8 +62,16 @@ module.exports = function (babel) {
 };
 
 function replaceAssertIfMatch (node) {
-    var callee = node.get('callee');
-    var arg = node.get('arguments')[0];
+    var target;
+    if (node.isCallExpression()) {
+        target = node;
+    } else if (node.isMemberExpression()) {
+        target = node.get('object');
+    } else {
+        return;
+    }
+    var callee = target.get('callee');
+    var arg = target.get('arguments')[0];
     if (isRequireAssert(callee, arg)) {
         arg.set('value', 'power-assert');
     }
