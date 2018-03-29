@@ -33,7 +33,7 @@ describe('babel-plugin-empower-assert', function () {
     testTransform('assignment_singlevar', 'js');
     testTransform('assignment_strictmode', 'js');
     testTransform('assignment_singlevar_strictmode', 'js');
-    testTransform('es6module', 'mjs');
-    testTransform('es6module_powerassert', 'mjs');
-    testTransform('es6module_namespace', 'mjs');
+    testTransform('esm_default_binding', 'mjs');
+    testTransform('esm_default_binding_powerassert', 'mjs');
+    testTransform('esm_namespace_import', 'mjs');
 });
