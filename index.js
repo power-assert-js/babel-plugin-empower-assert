@@ -29,11 +29,7 @@ module.exports = function (babel) {
                     if (!right.isCallExpression()) {
                         return;
                     }
-                    var callee = right.get('callee');
-                    var arg = right.get('arguments')[0];
-                    if (isRequireAssert(callee, arg)) {
-                        arg.set('value', 'power-assert');
-                    }
+                    replaceAssertIfMatch(right);
                 }
             },
             VariableDeclarator: {
@@ -49,11 +45,7 @@ module.exports = function (babel) {
                     if (!init.isCallExpression()) {
                         return;
                     }
-                    var callee = init.get('callee');
-                    var arg = init.get('arguments')[0];
-                    if (isRequireAssert(callee, arg)) {
-                        arg.set('value', 'power-assert');
-                    }
+                    replaceAssertIfMatch(init);
                 }
             },
             ImportDeclaration: {
@@ -76,6 +68,14 @@ module.exports = function (babel) {
         }
     };
 };
+
+function replaceAssertIfMatch (node) {
+    var callee = node.get('callee');
+    var arg = node.get('arguments')[0];
+    if (isRequireAssert(callee, arg)) {
+        arg.set('value', 'power-assert');
+    }
+}
 
 function isRequireAssert (callee, arg) {
     if (!callee.isIdentifier() || !callee.equals('name', 'require')) {
