@@ -29,8 +29,11 @@ describe('babel-plugin-empower-assert', function () {
     testTransform('commonjs_singlevar');
     testTransform('commonjs_powerassert');
     testTransform('commonjs_strictmode');
+    testTransform('commonjs_singlevar_strictmode');
     testTransform('assignment');
     testTransform('assignment_singlevar');
+    testTransform('assignment_strictmode');
+    testTransform('assignment_singlevar_strictmode');
     testTransform('es6module');
     testTransform('es6module_powerassert');
     testTransform('es6module_namespece');
