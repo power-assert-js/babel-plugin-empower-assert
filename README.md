@@ -16,6 +16,18 @@ $ npm install --save-dev babel-plugin-empower-assert power-assert
 ```
 
 
+CAUTION
+---------------------------------------
+
+Babel7 is incompatible with Babel6.
+
+For Babel6, you need to use [the 1.x release of babel-plugin-empower-assert](https://github.com/power-assert-js/babel-plugin-empower-assert/tree/v1.4.0).
+
+```
+$ npm install --save-dev babel-plugin-empower-assert@1.4.0
+```
+
+
 HOW TO USE
 ---------------------------------------
 
@@ -58,7 +70,7 @@ $ babel --plugins empower-assert /path/to/src/target.js > /path/to/build/target.
 ### via [Babel API](http://babeljs.io/docs/usage/api/)
 
 ```javascript
-var babel = require('babel-core');
+var babel = require('@babel/core');
 var jsCode = fs.readFileSync('/path/to/src/target.js');
 var transformed = babel.transform(jsCode, {
     presets: [...],
