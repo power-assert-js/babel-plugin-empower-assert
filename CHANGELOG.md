@@ -1,3 +1,11 @@
+## [1.4.0](https://github.com/power-assert-js/babel-plugin-empower-assert/releases/tag/v1.4.0) (2018-03-30)
+
+
+#### Features
+
+* [support "Strict mode" introduced in Node9](https://github.com/power-assert-js/babel-plugin-empower-assert/pull/5)
+
+
 ## [1.3.0](https://github.com/power-assert-js/babel-plugin-empower-assert/releases/tag/v1.3.0) (2016-04-27)
 
 
