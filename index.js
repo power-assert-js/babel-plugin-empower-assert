@@ -46,14 +46,6 @@ module.exports = function (babel) {
                     if (!(source.equals('value', 'assert'))) {
                         return;
                     }
-                    var firstSpecifier = nodePath.get('specifiers')[0];
-                    if (!(firstSpecifier.isImportDefaultSpecifier() || firstSpecifier.isImportNamespaceSpecifier())) {
-                        return;
-                    }
-                    var local = firstSpecifier.get('local');
-                    if (!(local.equals('name', 'assert'))) {
-                        return;
-                    }
                     source.set('value', 'power-assert');
                 }
             }
