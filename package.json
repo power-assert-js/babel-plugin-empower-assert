@@ -13,6 +13,9 @@
     "mocha": "^2.4.5",
     "xtend": "^4.0.1"
   },
+  "peerDependencies": {
+    "power-assert": "^1.0.0"
+  },
   "files": [
     "README.md",
     "CHANGELOG.md",
