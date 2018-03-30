@@ -1,3 +1,22 @@
+## [2.0.0-beta.1](https://github.com/power-assert-js/babel-plugin-empower-assert/releases/tag/v2.0.0-beta.1) (2018-03-30)
+
+
+#### Features
+
+* [Babel7 support](https://github.com/power-assert-js/babel-plugin-empower-assert/pull/6)
+
+
+#### Breaking Changes
+
+* Babel7 is incompatible with Babel6.
+
+For Babel6, you need to use [the 1.x release of babel-plugin-empower-assert](https://github.com/power-assert-js/babel-plugin-empower-assert/tree/v1.4.0).
+
+```
+$ npm install --save-dev babel-plugin-empower-assert@1.4.0
+```
+
+
 ## [1.4.0](https://github.com/power-assert-js/babel-plugin-empower-assert/releases/tag/v1.4.0) (2018-03-30)
 
 
