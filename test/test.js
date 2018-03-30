@@ -5,7 +5,7 @@ var empowerAssert = require('..');
 var assert = require('assert');
 var fs = require('fs');
 var path = require('path');
-var babel = require('babel-core');
+var babel = require('@babel/core');
 var extend = require('xtend');
 
 function testTransform (fixtureName, extension) {
@@ -19,7 +19,7 @@ function testTransform (fixtureName, extension) {
         });
         var actual = result.code;
         var expected = fs.readFileSync(expectedFilepath).toString();
-        assert.equal(actual + '\n', expected);
+        assert.equal(actual, expected);
     });
 }
 
