@@ -25,15 +25,7 @@ module.exports = function (babel) {
                     if (!left.equals('name', 'assert')) {
                         return;
                     }
-                    var right = nodePath.get('right');
-                    if (!right.isCallExpression()) {
-                        return;
-                    }
-                    var callee = right.get('callee');
-                    var arg = right.get('arguments')[0];
-                    if (isRequireAssert(callee, arg)) {
-                        arg.set('value', 'power-assert');
-                    }
+                    replaceAssertIfMatch(nodePath.get('right'));
                 }
             },
             VariableDeclarator: {
@@ -45,15 +37,7 @@ module.exports = function (babel) {
                     if (!id.equals('name', 'assert')) {
                         return;
                     }
-                    var init = nodePath.get('init');
-                    if (!init.isCallExpression()) {
-                        return;
-                    }
-                    var callee = init.get('callee');
-                    var arg = init.get('arguments')[0];
-                    if (isRequireAssert(callee, arg)) {
-                        arg.set('value', 'power-assert');
-                    }
+                    replaceAssertIfMatch(nodePath.get('init'));
                 }
             },
             ImportDeclaration: {
@@ -62,20 +46,28 @@ module.exports = function (babel) {
                     if (!(source.equals('value', 'assert'))) {
                         return;
                     }
-                    var firstSpecifier = nodePath.get('specifiers')[0];
-                    if (!(firstSpecifier.isImportDefaultSpecifier() || firstSpecifier.isImportNamespaceSpecifier())) {
-                        return;
-                    }
-                    var local = firstSpecifier.get('local');
-                    if (!(local.equals('name', 'assert'))) {
-                        return;
-                    }
                     source.set('value', 'power-assert');
                 }
             }
         }
     };
 };
+
+function replaceAssertIfMatch (node) {
+    var target;
+    if (node.isCallExpression()) {
+        target = node;
+    } else if (node.isMemberExpression()) {
+        target = node.get('object');
+    } else {
+        return;
+    }
+    var callee = target.get('callee');
+    var arg = target.get('arguments')[0];
+    if (isRequireAssert(callee, arg)) {
+        arg.set('value', 'power-assert');
+    }
+}
 
 function isRequireAssert (callee, arg) {
     if (!callee.isIdentifier() || !callee.equals('name', 'require')) {

@@ -8,16 +8,15 @@ var path = require('path');
 var babel = require('babel-core');
 var extend = require('xtend');
 
-function testTransform (fixtureName, extraOptions, extraSuffix) {
+function testTransform (fixtureName, extension) {
     it(fixtureName, function () {
-        var suffix = extraSuffix ? '-' + extraSuffix : '';
-        var fixtureFilepath = path.resolve(__dirname, 'fixtures', fixtureName, 'fixture.js');
-        var expectedFilepath = path.resolve(__dirname, 'fixtures', fixtureName, 'expected' + suffix + '.js');
-        var result = babel.transformFileSync(fixtureFilepath, extend({
+        var fixtureFilepath = path.resolve(__dirname, 'fixtures', fixtureName, 'fixture.' + extension);
+        var expectedFilepath = path.resolve(__dirname, 'fixtures', fixtureName, 'expected.' + extension);
+        var result = babel.transformFileSync(fixtureFilepath, {
             plugins: [
                 empowerAssert
             ]
-        }, extraOptions));
+        });
         var actual = result.code;
         var expected = fs.readFileSync(expectedFilepath).toString();
         assert.equal(actual + '\n', expected);
@@ -25,12 +24,17 @@ function testTransform (fixtureName, extraOptions, extraSuffix) {
 }
 
 describe('babel-plugin-empower-assert', function () {
-    testTransform('commonjs');
-    testTransform('commonjs_singlevar');
-    testTransform('commonjs_powerassert');
-    testTransform('assignment');
-    testTransform('assignment_singlevar');
-    testTransform('es6module');
-    testTransform('es6module_powerassert');
-    testTransform('es6module_namespece');
+    testTransform('commonjs', 'js');
+    testTransform('commonjs_singlevar', 'js');
+    testTransform('commonjs_powerassert', 'js');
+    testTransform('commonjs_strictmode', 'js');
+    testTransform('commonjs_singlevar_strictmode', 'js');
+    testTransform('assignment', 'js');
+    testTransform('assignment_singlevar', 'js');
+    testTransform('assignment_strictmode', 'js');
+    testTransform('assignment_singlevar_strictmode', 'js');
+    testTransform('esm_default_binding', 'mjs');
+    testTransform('esm_default_binding_powerassert', 'mjs');
+    testTransform('esm_namespace_import', 'mjs');
+    testTransform('esm_named_import_strictmode', 'mjs');
 });

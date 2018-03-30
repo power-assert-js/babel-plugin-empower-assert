@@ -1,10 +1,10 @@
 'use strict';
 
-import * as assert from 'power-assert';
+var assert = require('power-assert').strict;
 
 function add(a, b) {
     assert(!isNaN(a));
     assert.equal(typeof b, 'number');
-    assert.ok(!isNaN(b));
+    assert.deepEqual({ a: 1 }, { a: '1' });
     return a + b;
 }
