@@ -10,6 +10,7 @@ var extend = require('xtend');
 
 function testTransform (fixtureName, extension) {
     it(fixtureName, function () {
+        extension = extension || 'js';
         var fixtureFilepath = path.resolve(__dirname, 'fixtures', fixtureName, 'fixture.' + extension);
         var expectedFilepath = path.resolve(__dirname, 'fixtures', fixtureName, 'expected.' + extension);
         var result = babel.transformFileSync(fixtureFilepath, {
@@ -24,15 +25,15 @@ function testTransform (fixtureName, extension) {
 }
 
 describe('babel-plugin-empower-assert', function () {
-    testTransform('commonjs', 'js');
-    testTransform('commonjs_singlevar', 'js');
-    testTransform('commonjs_powerassert', 'js');
-    testTransform('commonjs_strictmode', 'js');
-    testTransform('commonjs_singlevar_strictmode', 'js');
-    testTransform('assignment', 'js');
-    testTransform('assignment_singlevar', 'js');
-    testTransform('assignment_strictmode', 'js');
-    testTransform('assignment_singlevar_strictmode', 'js');
+    testTransform('cjs');
+    testTransform('cjs_singlevar');
+    testTransform('cjs_powerassert');
+    testTransform('cjs_strictmode');
+    testTransform('cjs_singlevar_strictmode');
+    testTransform('cjs_assignment');
+    testTransform('cjs_assignment_singlevar');
+    testTransform('cjs_assignment_strictmode');
+    testTransform('cjs_assignment_singlevar_strictmode');
     testTransform('esm_default_binding', 'mjs');
     testTransform('esm_default_binding_powerassert', 'mjs');
     testTransform('esm_namespace_import', 'mjs');
