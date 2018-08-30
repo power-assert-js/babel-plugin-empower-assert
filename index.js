@@ -10,7 +10,10 @@
  */
 'use strict';
 
-module.exports = function (babel) {
+var declare = require('@babel/helper-plugin-utils').declare;
+
+module.exports = declare(function (api, options, dirname) {
+    api.assertVersion(7);
     return {
         visitor: {
             AssignmentExpression: {
@@ -51,7 +54,7 @@ module.exports = function (babel) {
             }
         }
     };
-};
+});
 
 function replaceAssertIfMatch (node) {
     var target;
